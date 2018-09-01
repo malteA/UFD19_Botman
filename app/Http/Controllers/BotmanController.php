@@ -15,6 +15,10 @@ class BotmanController extends Controller
             $bot->reply('Hello '.$firstName);
         });
 
+        $botman->fallback(function (BotMan $bot) {
+            $bot->reply('Fallback');
+        });
+
         $botman->listen();
     }
 }

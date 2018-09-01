@@ -150,7 +150,10 @@ return [
         /*
          * Package Service Providers...
          */
-
+        BotMan\Tinker\TinkerServiceProvider::class,
+        App\Providers\BotMan\DriverServiceProvider::class,
+        BotMan\BotMan\BotManServiceProvider::class,
+        BotMan\Studio\Providers\StudioServiceProvider::class,
         /*
          * Application Service Providers...
          */
