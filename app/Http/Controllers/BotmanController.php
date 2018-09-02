@@ -19,13 +19,13 @@ class BotmanController extends Controller
             $bot->reply('Hello '.$firstName);
         });
 
-        $botman->hears('Test', function ($bot) {
+        $botman->hears('next_session', function ($bot) {
             $extras = $bot->getMessage()->getExtras();
             $apiReply = $extras['apiReply'];
             $apiAction = $extras['apiAction'];
             $apiIntent = $extras['apiIntent'];
 
-            $bot->reply('this is my reply');
+            $bot->reply('this is my reply: apiReply: '.$apiReply.', apiAction: '.$apiAction.', apiIntent: '.$apiIntent);
         })->middleware($dialogflow);
 
         $botman->fallback(function (BotMan $bot) {
